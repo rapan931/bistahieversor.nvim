@@ -1,0 +1,2 @@
+# bistahieversor.nvim
+search count
