@@ -20,8 +20,11 @@ local bistahieversor = require('bistahieversor')
 bistahieversor.setup({ maxcount = 500 })
 map('n', bistahieversor.n_and_echo)
 map('N', bistahieversor.N_and_echo)
+```
 
--- use lasterisk.nvim
+use [lasterisk.nvim](https://github.com/rapan931/lasterisk.nvim)
+
+```lua
 nmap('*',  function() require("lasterisk").search() bistahieversor.echo() end)
 nmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahieversor.echo() end)
 xmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahieversor.echo() end)
@@ -32,4 +35,4 @@ xmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahie
 
 ## Why is the plugin named `bistahieversor.nvim` ?
 
-- My kids love [this dinosaur](https://en.wikipedia.org/wiki/Bistahieversor) so much I used it as the name of the plugin! sorry long name!
+My kids love [this dinosaur](https://en.wikipedia.org/wiki/Bistahieversor) so much I used it as the name of the plugin! sorry long name!
