@@ -17,7 +17,7 @@ use 'rapan931/bistahieversor.nvim'
 ```lua
 local bistahieversor = require('bistahieversor')
 
-bistahieversor.setup({ maxcount = 500 })
+bistahieversor.setup({ maxcount = 1000, echo_wrapscan = true })
 map('n', bistahieversor.n_and_echo)
 map('N', bistahieversor.N_and_echo)
 ```
@@ -29,9 +29,19 @@ nmap('*',  function() require("lasterisk").search() bistahieversor.echo() end)
 nmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahieversor.echo() end)
 xmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahieversor.echo() end)
 ```
-## Todo
 
-- [x] Jump next searched word, and echo search count
+## Options
+
+```lua
+require('bistahieversor').setup({
+  maxcount = 500, -- Max count of matched search, see ":h searchcount"
+  timeout = 0, -- Timeout milliseconds recomputing the search result, see ":h searchcount"
+  echo_wrapscan = 0, -- Echo wrapscan messages, see ":h shortmess" and 's' flag
+  search_hit_bottom_msg = {'search hit BOTTOM, continuing at TOP', 'ErrorMsg'}, -- hit bottom message and highlight group
+  search_hit_top_msg = {'search hit TOP, continuing at BOTTOM', 'ErrorMsg'}, -- hit top message and highlight group
+})
+```
+
 
 ## Why is the plugin named `bistahieversor.nvim` ?
 
