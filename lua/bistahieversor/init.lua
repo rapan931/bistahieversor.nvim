@@ -7,7 +7,7 @@ local fn = vim.fn
 ---@field maxcount number
 ---@field timeout number
 local config = {
-  maxcount = 99,
+  maxcount = 500,
   timeout = 0
 }
 
