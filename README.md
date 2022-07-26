@@ -5,7 +5,7 @@ The [vim-anzu](https://github.com/osyo-manga/vim-anzu) is great plugin. This plu
 
 ## Install
 
-[packer.nvim](https://github.com/wbthomason/packer.nvim)
+[packer.nvim](https://github.com/wbthomason/packer.nvim)  
 [vim-jetpack](https://github.com/tani/vim-jetpack)
 
 ```lua
