@@ -18,16 +18,16 @@ use 'rapan931/bistahieversor.nvim'
 local bistahieversor = require('bistahieversor')
 
 bistahieversor.setup({ maxcount = 1000, echo_wrapscan = true })
-map('n', bistahieversor.n_and_echo)
-map('N', bistahieversor.N_and_echo)
+vim.keymap.set({'n', 'x', 'o'}, 'n', function() bistahieversor.n_and_echo() end)
+vim.keymap.set({'n', 'x', 'o'}, 'N', function() bistahieversor.N_and_echo() end)
 ```
 
 use [lasterisk.nvim](https://github.com/rapan931/lasterisk.nvim)
 
 ```lua
-nmap('*',  function() require("lasterisk").search() bistahieversor.echo() end)
-nmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahieversor.echo() end)
-xmap('g*', function() require("lasterisk").search({ is_whole = false }) bistahieversor.echo() end)
+vim.keymap.set('n', '*',  function() require("lasterisk").search(); bistahieversor.echo() end)
+vim.keymap.set('n', 'g*', function() require("lasterisk").search({ is_whole = false }); bistahieversor.echo() end)
+vim.keymap.set('x', 'g*', function() require("lasterisk").search({ is_whole = false }); bistahieversor.echo() end)
 ```
 
 ## Options
