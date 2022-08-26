@@ -13,8 +13,8 @@ local config = {
   maxcount = 500,
   timeout = 0,
   echo_wrapscan = false,
-  search_hit_bottom_msg = {'search hit BOTTOM, continuing at TOP', 'ErrorMsg'},
-  search_hit_top_msg = {'search hit TOP, continuing at BOTTOM', 'ErrorMsg'},
+  search_hit_bottom_msg = { 'search hit BOTTOM, continuing at TOP', 'ErrorMsg' },
+  search_hit_top_msg = { 'search hit TOP, continuing at BOTTOM', 'ErrorMsg' },
 }
 
 local function get_search_count_msg()
@@ -100,7 +100,7 @@ local function jump_and_echo(key)
   )
 
   if ok == false then
-    api.nvim_echo({{string.gsub(result, '^Vim%(normal%):', ''), 'ErrorMsg'}}, true, {})
+    api.nvim_echo({ { string.gsub(result, '^Vim%(normal%):', ''), 'ErrorMsg' } }, true, {})
     return
   end
 
@@ -109,12 +109,12 @@ local function jump_and_echo(key)
   if config.echo_wrapscan == true then
     local wrapscan_msg = get_wrapscan_msg(key, before_pos)
     if #wrapscan_msg == 0 then
-      api.nvim_echo({{search_count_msg}}, false, {})
+      api.nvim_echo({ { search_count_msg } }, false, {})
     else
-      api.nvim_echo({{search_count_msg}, {' '}, wrapscan_msg}, false, {})
+      api.nvim_echo({ { search_count_msg }, { ' ' }, wrapscan_msg }, false, {})
     end
   else
-    api.nvim_echo({{search_count_msg}}, false, {})
+    api.nvim_echo({ { search_count_msg } }, false, {})
   end
 end
 
@@ -125,7 +125,7 @@ end
 
 M.echo = function()
   local search_count_msg = get_search_count_msg()
-  api.nvim_echo({{search_count_msg}}, false, {})
+  api.nvim_echo({ { search_count_msg } }, false, {})
 end
 
 M.n_and_echo = function()
