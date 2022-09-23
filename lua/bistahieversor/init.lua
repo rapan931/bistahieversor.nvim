@@ -116,21 +116,15 @@ local function jump_and_echo(key)
 end
 
 ---@param override bistahieversorConfig
-M.setup = function(override)
-  config = vim.tbl_extend("force", config, override)
-end
+M.setup = function(override) config = vim.tbl_extend("force", config, override) end
 
 M.echo = function()
   local search_count_msg = get_search_count_msg()
   api.nvim_echo({ { search_count_msg } }, false, {})
 end
 
-M.n_and_echo = function()
-  jump_and_echo("n")
-end
+M.n_and_echo = function() jump_and_echo("n") end
 
-M.N_and_echo = function()
-  jump_and_echo("N")
-end
+M.N_and_echo = function() jump_and_echo("N") end
 
 return M
