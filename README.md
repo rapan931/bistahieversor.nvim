@@ -41,8 +41,3 @@ require('bistahieversor').setup({
   search_hit_top_msg = {'search hit TOP, continuing at BOTTOM', 'ErrorMsg'}, -- hit top message and highlight group
 })
 ```
-
-
-## Why is the plugin named `bistahieversor.nvim` ?
-
-My kids love [this dinosaur](https://en.wikipedia.org/wiki/Bistahieversor) so much I used it as the name of the plugin! sorry long name!
