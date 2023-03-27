@@ -96,8 +96,8 @@ local function jump_and_echo(key)
   local before_pos = fn.getpos(".")
   local ok, result = pcall(vim.cmd, "normal! " .. key)
 
-  if ok == false then
-    api.nvim_echo({ { string.gsub(result, "^Vim%(normal%):", ""), "ErrorMsg" } }, true, {})
+  if ok == false and result ~= nil then
+    api.nvim_echo({ { string.gsub(result, "^.*Vim%(normal%):", ""), "ErrorMsg" } }, true, {})
     return
   end
 
